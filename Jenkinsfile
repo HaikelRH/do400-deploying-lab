@@ -34,8 +34,7 @@ when { not { branch "main" } }
 steps {
 sh """
 oc set image deployment home-automation \
-home-automation=quay.io/${QUAY_USR}/do400-deploying-lab:build-
-${BUILD_NUMBER} \
+home-automation=quay.io/${QUAY_USR}/do400-deploying-lab:build-${BUILD_NUMBER} \
 -n RHT_OCP4_DEV_USER-deploying-lab-test --record
 """
 }
